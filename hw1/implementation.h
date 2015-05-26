@@ -12,9 +12,9 @@ typedef struct tree_node {
 
 typedef struct leaf {
    char *line;
-} object_t;
+} line_t;
 
 text_t *allocate_tree( void );
-object_t *allocate_object( void );
+line_t *allocate_object( void );
 
 #endif
