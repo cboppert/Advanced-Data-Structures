@@ -1,6 +1,7 @@
 #ifndef _IMPLEMENTATION_H_
 #define _IMPLEMENTATION_H_
 
+//Object definitions
 typedef struct tree_node {
    int key;
 
@@ -16,5 +17,7 @@ typedef struct leaf {
 
 text_t *allocate_tree( void );
 line_t *allocate_object( void );
+
+line_t *find( text_t *txt, int index );
 
 #endif

@@ -8,7 +8,12 @@ text_t *allocate_tree( void )
    return (text_t *) malloc( sizeof( text_t ) );
 }
 
-object_t *allocate_object( void )
+line_t *allocate_object( void )
 {
-   return (object_t *) malloc( sizeof( object_t ) );
+   return (line_t *) malloc( sizeof( line_t ) );
+}
+
+line_t *find( text_t *txt, int index )
+{
+   return NULL;
 }
