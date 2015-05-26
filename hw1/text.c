@@ -7,8 +7,10 @@
 
 text_t *create_text()
 {
+   text_t *tmp_text = allocate_tree();
+   tmp_text->left = NULL;
 
-   return NULL;
+   return tmp_text;
 }
 
 char *get_line( text_t *txt, int index )
