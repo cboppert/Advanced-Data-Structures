@@ -44,6 +44,23 @@ char *delete_line( text_t *txt, int index )
 
 int length_text( text_t *txt )
 {
+   if ( txt->left == NULL )
+   {
+      return 0;
+   }
 
-   return 0;
+   if ( txt->right == NULL )
+   {
+      return 1;
+   }
+
+   else
+   {
+      text_t *tmp_txt = txt;
+      while ( txt->right != NULL )
+      {
+         tmp_txt = txt->right;
+      }
+      return tmp_txt->key;
+   }
 }
