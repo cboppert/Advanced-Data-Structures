@@ -23,7 +23,7 @@ char *get_line( text_t *txt, int index )
 
 void append_line( text_t *txt, char *new_line )
 {
-
+   insert_line( txt, length_text( txt ) + 1, new_line );
 }
 
 void insert_line( text_t *txt, int index, char *new_line )
