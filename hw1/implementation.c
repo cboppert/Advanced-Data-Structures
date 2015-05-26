@@ -1,6 +1,7 @@
 /* Author: Cody Boppert */
 
 #include <stdlib.h>
+#include "text_struct.c"
 #include "implementation.h"
 
 text_t *allocate_tree( void )
@@ -15,5 +16,39 @@ line_t *allocate_object( void )
 
 line_t *find( text_t *txt, int index )
 {
-   return NULL;
+   text_t *tmp_text;
+
+   // Empty Tree
+   if ( txt->left == NULL )
+   {
+      return NULL;
+   }
+
+   else
+   {
+      tmp_text = txt;
+
+      while ( txt->right != NULL )
+      {
+         if ( index < tmp_text->key )
+         {
+            tmp_text = tmp_text->left;
+         }
+
+         else
+         {
+            tmp_text = tmp_text->right;
+         }
+      }
+
+      if (  index == tmp_text->key )
+      {
+         return (line_t *) tmp_text->left;
+      }
+
+      else
+      {
+         return NULL;
+      }
+   }
 }
