@@ -29,6 +29,10 @@ void append_line( text_t *txt, char *new_line )
 void insert_line( text_t *txt, int index, char *new_line )
 {
 
+   if ( is_empty_text( txt ) )
+   {
+      insert_into_empty_text( txt, index, new_line );
+   }
 }
 
 void set_line( text_t *txt, int index, char *new_line )

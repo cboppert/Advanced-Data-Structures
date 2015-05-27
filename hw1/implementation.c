@@ -17,6 +17,19 @@ line_t *allocate_object( void )
    return (line_t *) malloc( sizeof( line_t ) );
 }
 
+line_t *create_line( char *line )
+{
+   line_t *line_obj = allocate_object();
+   line_obj->line = line;
+
+   return line_obj;
+}
+
+int is_empty_text( text_t *txt )
+{
+   return ( txt->left == NULL ) ? 1 : 0;
+}
+
 line_t *find( text_t *txt, int index )
 {
    text_t *tmp_text;
@@ -54,6 +67,13 @@ line_t *find( text_t *txt, int index )
          return NULL;
       }
    }
+}
+
+void insert_into_empty_text( text_t *txt, int index, char *new_line )
+{
+   txt->key = index;
+   txt->left = (text_t *) create_line( new_line );
+   txt->right = NULL;
 }
 
 // Intermediate layer for dealing with memory allocation
