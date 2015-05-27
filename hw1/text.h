@@ -1,6 +1,7 @@
 #ifndef _TEXT_H_
 #define _TEXT_H_
 
+#include "text_struct.c"
 #include "implementation.h"
 
 text_t *create_text();
